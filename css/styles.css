@@ -287,3 +287,109 @@ footer a:hover { color: #fff; }
 .tema-urgente .hero .eyebrow { color: var(--acento); }
 .tema-urgente .btn-outline { border-color: var(--acento-2); color: var(--acento-2); }
 .tema-urgente .btn-outline:hover { background: var(--acento-2); color: #fff; }
+.opiniones:has(> :nth-child(2):last-child) { grid-template-columns: repeat(2, 1fr); max-width: 820px; margin-inline: auto; }
+@media (max-width: 620px) { .opiniones:has(> :nth-child(2):last-child) { grid-template-columns: 1fr; } }
+
+/* ───────────── Layouts (body.layout-*) ───────────── */
+
+/* COVER: full-bleed photo hero, dark translucent header, services as a list */
+.layout-cover .top { background: rgba(12, 12, 14, .72); color: #fff; border-bottom: 0; }
+.layout-cover .top .logo small { color: rgba(255, 255, 255, .7); }
+.layout-cover .top nav a[aria-current="page"] { color: var(--acento); }
+.hero-cover { min-height: min(86vh, 760px); display: flex; align-items: flex-end; padding: 0 0 80px; color: #fff; background: #111 var(--img) center / cover no-repeat; }
+.hero-cover::before { width: auto; height: auto; inset: 0; border-radius: 0; right: 0; top: 0; background: linear-gradient(180deg, rgba(0, 0, 0, .15) 0%, rgba(0, 0, 0, .55) 45%, rgba(0, 0, 0, .88) 100%); }
+.hero-cover-copy { position: relative; max-width: 760px; margin-left: max(20px, calc((100% - 1160px) / 2)); }
+.hero-cover h1 { color: #fff; max-width: 16ch; font-size: clamp(2.6rem, 6vw, 4.8rem); }
+.hero-cover .lead, .hero-cover .rating { color: rgba(255, 255, 255, .85); }
+.hero-cover .rating b { color: #fff; }
+.hero-cover .btn-ghost { color: #fff; }
+.layout-cover .datos-grid { transform: none; margin-top: -40px; position: relative; }
+.layout-cover .seccion-servicios .servicios { grid-template-columns: 1fr 1fr; gap: 0 48px; }
+.layout-cover .servicio { display: grid; grid-template-columns: 56px 1fr; column-gap: 18px; background: none; border: 0; border-bottom: 1px solid var(--linea); border-radius: 0; padding: 26px 0; }
+.layout-cover .servicio:hover { transform: none; }
+.layout-cover .servicio .num { grid-row: span 2; font-size: 2rem; margin: 0; line-height: 1; }
+.layout-cover .banner { padding: 120px 0 64px; background: #0f0f10; }
+.layout-cover .banner h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); }
+.layout-cover .banner-arte { opacity: .18; }
+
+/* EDITORIAL: centered header and title over a wide photo, featured review, squarer buttons */
+.layout-editorial .nav { flex-wrap: wrap; justify-content: center; gap: 4px 26px; padding: 14px 0 6px; }
+.layout-editorial .logo { width: 100%; justify-content: center; }
+.layout-editorial .top nav { margin: 0; }
+.layout-editorial .nav .btn-sm { display: none; }
+.layout-editorial .btn { border-radius: 8px; }
+.hero-editorial { padding-top: 64px; text-align: center; }
+.hero-editorial::before { display: none; }
+.hero-ed-copy { max-width: 820px; margin: 0 auto 48px; }
+.hero-editorial h1 { max-width: none; font-size: clamp(2.6rem, 6vw, 5rem); }
+.hero-editorial .lead { margin-inline: auto; }
+.hero-editorial .cta-row { justify-content: center; }
+.hero-ancha { margin: 0 auto; position: relative; max-width: 960px; }
+.hero-ancha img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 6px; box-shadow: var(--sombra); }
+.hero-ancha figcaption { position: absolute; left: 24px; bottom: 24px; background: var(--superficie); padding: 10px 18px; border-radius: 6px; box-shadow: var(--sombra); }
+.hero-ancha .rating { margin: 0; }
+.hero-ed-medalla .hero-medalla { margin: 0 auto; max-width: 320px; }
+.layout-editorial .intro { padding-top: 92px; }
+.layout-editorial .intro .split { grid-template-columns: .95fr 1.05fr; }
+.layout-editorial .intro .split > :first-child { order: 2; }
+.layout-editorial .marco::after { inset: -18px 18px 18px -18px; }
+.layout-editorial .servicio { text-align: center; border-top: 4px solid var(--acento); border-radius: 6px; }
+.layout-editorial .opiniones { grid-template-columns: 1fr 1fr; }
+.layout-editorial .opinion:first-child { grid-column: 1 / -1; text-align: center; padding: 44px 10%; border-top: 0; background: transparent; box-shadow: none; }
+.layout-editorial .opinion:first-child blockquote { font-size: clamp(1.25rem, 2.2vw, 1.7rem); line-height: 1.45; }
+.layout-editorial .banner { background: var(--fondo); color: var(--texto); text-align: center; border-bottom: 1px solid var(--linea); }
+.tema-tinta.layout-editorial .banner { background: #141415; }
+.layout-editorial .banner h1 { color: var(--texto); }
+.layout-editorial .banner .lead { color: var(--suave); margin-inline: auto; }
+.layout-editorial .banner-arte { left: 50%; right: auto; transform: translate(-50%, -50%); opacity: .08; width: 340px; height: 340px; }
+
+/* POSTER: accent block hero with a tilted photo card, bold numbered services, dark reviews band */
+.layout-poster .top { border-bottom: 4px solid var(--acento); }
+.layout-poster .btn { border-radius: 4px; box-shadow: 4px 4px 0 rgba(0, 0, 0, .85); }
+.layout-poster .btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(0, 0, 0, .85); }
+.layout-poster .hero.hero-poster { background: var(--acento); color: #111; padding: 76px 0 96px; }
+.hero-poster::before { background: radial-gradient(circle, rgba(255, 255, 255, .25), transparent 70%); }
+.hero-poster .eyebrow { color: #111; opacity: .75; }
+.hero-poster h1 { color: #111; font-size: clamp(2.6rem, 6vw, 4.8rem); max-width: 13ch; }
+.layout-poster .hero-poster .lead, .layout-poster .hero-poster .rating { color: rgba(17, 17, 17, .78); }
+.layout-poster .hero-poster .btn-ghost { color: #111; background: #fff; border-color: #111; }
+.poster-grid { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
+.polaroid { margin: 0 auto; max-width: 400px; background: #fff; padding: 14px 14px 18px; box-shadow: 0 24px 50px rgba(0, 0, 0, .3); transform: rotate(3deg); position: relative; }
+.polaroid img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.sello { position: absolute; left: -28px; bottom: 36px; background: #111; color: #fff; border-radius: 50%; width: 112px; height: 112px; display: grid; place-content: center; text-align: center; font-family: var(--titulo); font-size: 1.6rem; font-weight: 700; line-height: 1; transform: rotate(-10deg); box-shadow: 0 10px 24px rgba(0, 0, 0, .3); }
+.sello small { font-family: var(--cuerpo); font-size: .7rem; font-weight: 600; margin-top: 4px; opacity: .8; }
+.hero-poster .hero-medalla { background: #fff; color: #111; }
+.layout-poster .seccion-servicios { background: var(--fondo); }
+.layout-poster .servicio { background: var(--superficie); border: 2px solid var(--texto); border-radius: 4px; box-shadow: 6px 6px 0 var(--acento); }
+.layout-poster .servicio .num { font-size: 3rem; line-height: 1; }
+.layout-poster .seccion-opiniones { background: var(--acento-2); }
+.tema-tinta.layout-poster .seccion-opiniones { background: #1c1c1f; }
+.layout-poster .seccion-opiniones .head h2 { color: #fff; }
+.tema-tinta.layout-poster .seccion-opiniones .head h2 { color: var(--texto); }
+.layout-poster .seccion-opiniones .head .eyebrow { color: var(--acento); }
+.layout-poster .opinion { border-top: 0; border-left: 6px solid var(--acento); }
+.layout-poster .datos-grid { transform: none; }
+.layout-poster .datos { padding: 0 0 92px; }
+.layout-poster .banner { background: var(--acento); color: #111; }
+.layout-poster .banner h1 { color: #111; }
+.layout-poster .banner .eyebrow, .layout-poster .banner .lead { color: rgba(17, 17, 17, .75); }
+.layout-poster .banner-arte { color: #111; opacity: .12; }
+
+@media (max-width: 960px) {
+  .layout-cover .seccion-servicios .servicios { grid-template-columns: 1fr; }
+  .layout-editorial .nav { flex-wrap: nowrap; justify-content: flex-start; padding: 0; }
+  .layout-editorial .logo { width: auto; justify-content: flex-start; }
+  .layout-editorial .nav .btn-sm { display: inline-flex; }
+  .layout-editorial .intro .split > :first-child { order: 0; }
+  .layout-editorial .opiniones { grid-template-columns: 1fr; }
+  .hero-ancha img { aspect-ratio: 4 / 3; }
+  .poster-grid { grid-template-columns: 1fr; gap: 56px; }
+  .polaroid { max-width: 320px; }
+  .sello { left: -14px; width: 92px; height: 92px; font-size: 1.3rem; }
+}
+@media (max-width: 620px) {
+  .hero-cover { min-height: 78vh; padding-bottom: 56px; }
+  .hero-cover-copy { margin-left: 16px; margin-right: 16px; }
+  .hero-ancha figcaption { position: static; margin-top: 12px; box-shadow: none; padding: 0; background: none; }
+  .layout-editorial .opinion:first-child { padding: 24px 0; }
+}
